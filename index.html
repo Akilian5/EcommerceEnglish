@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo">
+        <span class="logo__mark">⚡</span> <span>Nova</span>
+      </a>
+      <nav class="nav">
+        <a href="#top">Home</a>
+        <a href="#products">Products</a>
+        <a href="#features">Why Us</a>
+      </nav>
+      <button class="cart-btn" id="openCart" aria-label="Open shopping cart">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="21" r="1.5"></circle>
+          <circle cx="19" cy="21" r="1.5"></circle>
+          <path d="M1 2h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path>
+        </svg>
+        <span class="cart-btn__count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <span class="badge">New Season Deals</span>
+          <h1>Upgrade Your <span class="gradient-text">Tech Game</span></h1>
+          <p>Discover the best gaming gear and smart devices at unbeatable prices. Free shipping on orders over $100.</p>
+          <a href="#products" class="btn btn--primary btn--lg">Shop Now</a>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <div class="orb orb--1"></div>
+          <div class="orb orb--2"></div>
+          <div class="setup-visual">
+            <div class="setup-visual__glow"></div>
+            <div class="setup-visual__panel">
+              <span class="setup-visual__eyebrow"><span class="setup-visual__status"></span> YOUR NEXT LEVEL</span>
+              <div class="setup-visual__gear" aria-hidden="true">
+                <div class="setup-visual__monitor"><span></span></div>
+                <div class="setup-visual__keyboard"></div>
+                <div class="setup-visual__tower"><i></i><i></i><i></i></div>
+              </div>
+              <div class="setup-visual__caption">
+                <div><strong>Level up your setup</strong><span>Gear that hits different.</span></div>
+                <span class="setup-visual__arrow" aria-hidden="true">↗</span>
+              </div>
+            </div>
+            <span class="setup-visual__spark setup-visual__spark--one" aria-hidden="true">✦</span>
+            <span class="setup-visual__spark setup-visual__spark--two" aria-hidden="true">✧</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="container">
+        <h2 class="section__title">Featured Products</h2>
+        <p class="section__subtitle">Top-rated tech picked just for you</p>
+        <div class="grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="features">
+      <div class="container features">
+        <div class="feature"><span>🚚</span><h3>Free Shipping</h3><p>On all orders over $100</p></div>
+        <div class="feature"><span>🔒</span><h3>Secure Payment</h3><p>100% protected checkout</p></div>
+        <div class="feature"><span>↩️</span><h3>Easy Returns</h3><p>30-day money-back guarantee</p></div>
+        <div class="feature"><span>💬</span><h3>24/7 Support</h3><p>We are always here to help</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Nova Store. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Shopping cart">
+    <div class="drawer__header">
+      <h2>Your Cart</h2>
+      <button class="icon-btn" id="closeCart" aria-label="Close cart">✕</button>
+    </div>
+    <div class="drawer__body" id="cartItems"></div>
+    <div class="drawer__footer">
+      <div class="total-row"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+      <button class="btn btn--primary btn--block" id="checkoutBtn">Checkout</button>
+      <button class="btn btn--ghost btn--block" id="clearBtn">Clear Cart</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="product-modal" id="productModal" aria-hidden="true">
+    <div class="product-modal__backdrop" data-close-product></div>
+    <section class="product-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+      <button class="product-modal__close" type="button" data-close-product aria-label="Close product details">×</button>
+      <div class="product-modal__content" id="productModalContent"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
